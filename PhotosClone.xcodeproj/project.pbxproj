@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		221D4E561DDC9C190090A55A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D4E551DDC9C190090A55A /* main.m */; };
+		221D4E591DDC9C190090A55A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D4E581DDC9C190090A55A /* AppDelegate.m */; };
+		221D4E5F1DDC9C190090A55A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221D4E5D1DDC9C190090A55A /* Main.storyboard */; };
+		221D4E611DDC9C190090A55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221D4E601DDC9C190090A55A /* Assets.xcassets */; };
+		221D4E641DDC9C190090A55A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221D4E621DDC9C190090A55A /* LaunchScreen.storyboard */; };
+		221D4E771DDCA3830090A55A /* AlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D4E761DDCA3830090A55A /* AlbumTableViewCell.m */; };
+		221D4E7A1DDCB1920090A55A /* PhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D4E791DDCB1920090A55A /* PhotosManager.m */; };
+		22218C0D1DDDB7A300E54AE9 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22218C0C1DDDB7A300E54AE9 /* PhotoCollectionViewCell.m */; };
+		22218C101DDDC64200E54AE9 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22218C0F1DDDC64200E54AE9 /* PhotoViewController.m */; };
+		22218C131DDDE8C100E54AE9 /* PhotoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22218C121DDDE8C100E54AE9 /* PhotoPageViewController.m */; };
+		223838FE1DE1578400F88527 /* AlbumGridTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223838FD1DE1578400F88527 /* AlbumGridTableViewController.m */; };
+		22503FB21DDDACBD00B5327E /* PhotoGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22503FB11DDDACBD00B5327E /* PhotoGridCollectionViewController.m */; };
+		22503FB91DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22503FB81DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		221D4E511DDC9C190090A55A /* PhotosClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		221D4E551DDC9C190090A55A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		221D4E571DDC9C190090A55A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		221D4E581DDC9C190090A55A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		221D4E5E1DDC9C190090A55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		221D4E601DDC9C190090A55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		221D4E631DDC9C190090A55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		221D4E651DDC9C190090A55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		221D4E751DDCA3830090A55A /* AlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumTableViewCell.h; path = PhotosClone/View/Cell/AlbumTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		221D4E761DDCA3830090A55A /* AlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumTableViewCell.m; path = PhotosClone/View/Cell/AlbumTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		221D4E781DDCB1920090A55A /* PhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosManager.h; sourceTree = "<group>"; };
+		221D4E791DDCB1920090A55A /* PhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosManager.m; sourceTree = "<group>"; };
+		22218C0B1DDDB7A300E54AE9 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCollectionViewCell.h; path = Cell/PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		22218C0C1DDDB7A300E54AE9 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCollectionViewCell.m; path = Cell/PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		22218C0E1DDDC64200E54AE9 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		22218C0F1DDDC64200E54AE9 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		22218C111DDDE8C100E54AE9 /* PhotoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPageViewController.h; sourceTree = "<group>"; };
+		22218C121DDDE8C100E54AE9 /* PhotoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPageViewController.m; sourceTree = "<group>"; };
+		223838FC1DE1578400F88527 /* AlbumGridTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumGridTableViewController.h; sourceTree = "<group>"; };
+		223838FD1DE1578400F88527 /* AlbumGridTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumGridTableViewController.m; sourceTree = "<group>"; };
+		22503FB01DDDACBD00B5327E /* PhotoGridCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridCollectionViewController.h; sourceTree = "<group>"; };
+		22503FB11DDDACBD00B5327E /* PhotoGridCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridCollectionViewController.m; sourceTree = "<group>"; };
+		22503FB71DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DisplayActivityIndicator.h"; sourceTree = "<group>"; };
+		22503FB81DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DisplayActivityIndicator.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		221D4E4E1DDC9C190090A55A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		221D4E481DDC9C190090A55A = {
+			isa = PBXGroup;
+			children = (
+				221D4E531DDC9C190090A55A /* PhotosClone */,
+				221D4E521DDC9C190090A55A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		221D4E521DDC9C190090A55A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				221D4E511DDC9C190090A55A /* PhotosClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		221D4E531DDC9C190090A55A /* PhotosClone */ = {
+			isa = PBXGroup;
+			children = (
+				221D4E781DDCB1920090A55A /* PhotosManager.h */,
+				221D4E791DDCB1920090A55A /* PhotosManager.m */,
+				22503FB31DDDAEF200B5327E /* Categories */,
+				221D4E6D1DDC9DAE0090A55A /* View */,
+				221D4E6B1DDC9DA30090A55A /* Controller */,
+				221D4E571DDC9C190090A55A /* AppDelegate.h */,
+				221D4E581DDC9C190090A55A /* AppDelegate.m */,
+				221D4E5D1DDC9C190090A55A /* Main.storyboard */,
+				221D4E601DDC9C190090A55A /* Assets.xcassets */,
+				221D4E621DDC9C190090A55A /* LaunchScreen.storyboard */,
+				221D4E651DDC9C190090A55A /* Info.plist */,
+				221D4E541DDC9C190090A55A /* Supporting Files */,
+			);
+			path = PhotosClone;
+			sourceTree = "<group>";
+		};
+		221D4E541DDC9C190090A55A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				221D4E551DDC9C190090A55A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		221D4E6B1DDC9DA30090A55A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				223838FC1DE1578400F88527 /* AlbumGridTableViewController.h */,
+				223838FD1DE1578400F88527 /* AlbumGridTableViewController.m */,
+				22503FB01DDDACBD00B5327E /* PhotoGridCollectionViewController.h */,
+				22503FB11DDDACBD00B5327E /* PhotoGridCollectionViewController.m */,
+				22218C111DDDE8C100E54AE9 /* PhotoPageViewController.h */,
+				22218C121DDDE8C100E54AE9 /* PhotoPageViewController.m */,
+				22218C0E1DDDC64200E54AE9 /* PhotoViewController.h */,
+				22218C0F1DDDC64200E54AE9 /* PhotoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		221D4E6D1DDC9DAE0090A55A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				221D4E741DDCA3590090A55A /* Cell */,
+			);
+			name = View;
+			path = PhotosClone/View;
+			sourceTree = SOURCE_ROOT;
+		};
+		221D4E741DDCA3590090A55A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				221D4E751DDCA3830090A55A /* AlbumTableViewCell.h */,
+				221D4E761DDCA3830090A55A /* AlbumTableViewCell.m */,
+				22218C0B1DDDB7A300E54AE9 /* PhotoCollectionViewCell.h */,
+				22218C0C1DDDB7A300E54AE9 /* PhotoCollectionViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		22503FB31DDDAEF200B5327E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				22503FB71DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.h */,
+				22503FB81DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		221D4E501DDC9C190090A55A /* PhotosClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221D4E681DDC9C190090A55A /* Build configuration list for PBXNativeTarget "PhotosClone" */;
+			buildPhases = (
+				221D4E4D1DDC9C190090A55A /* Sources */,
+				221D4E4E1DDC9C190090A55A /* Frameworks */,
+				221D4E4F1DDC9C190090A55A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotosClone;
+			productName = PhotosClone;
+			productReference = 221D4E511DDC9C190090A55A /* PhotosClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		221D4E491DDC9C190090A55A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Samvel Mejlumyan";
+				TargetAttributes = {
+					221D4E501DDC9C190090A55A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8YUNFE7T6U;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 221D4E4C1DDC9C190090A55A /* Build configuration list for PBXProject "PhotosClone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 221D4E481DDC9C190090A55A;
+			productRefGroup = 221D4E521DDC9C190090A55A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				221D4E501DDC9C190090A55A /* PhotosClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		221D4E4F1DDC9C190090A55A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221D4E641DDC9C190090A55A /* LaunchScreen.storyboard in Resources */,
+				221D4E611DDC9C190090A55A /* Assets.xcassets in Resources */,
+				221D4E5F1DDC9C190090A55A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		221D4E4D1DDC9C190090A55A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221D4E7A1DDCB1920090A55A /* PhotosManager.m in Sources */,
+				22503FB91DDDAF9900B5327E /* UIViewController+DisplayActivityIndicator.m in Sources */,
+				223838FE1DE1578400F88527 /* AlbumGridTableViewController.m in Sources */,
+				221D4E591DDC9C190090A55A /* AppDelegate.m in Sources */,
+				22218C0D1DDDB7A300E54AE9 /* PhotoCollectionViewCell.m in Sources */,
+				221D4E771DDCA3830090A55A /* AlbumTableViewCell.m in Sources */,
+				22218C131DDDE8C100E54AE9 /* PhotoPageViewController.m in Sources */,
+				22503FB21DDDACBD00B5327E /* PhotoGridCollectionViewController.m in Sources */,
+				22218C101DDDC64200E54AE9 /* PhotoViewController.m in Sources */,
+				221D4E561DDC9C190090A55A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		221D4E5D1DDC9C190090A55A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				221D4E5E1DDC9C190090A55A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		221D4E621DDC9C190090A55A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				221D4E631DDC9C190090A55A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		221D4E661DDC9C190090A55A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		221D4E671DDC9C190090A55A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		221D4E691DDC9C190090A55A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8YUNFE7T6U;
+				INFOPLIST_FILE = PhotosClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.mejlumyan.PhotosClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		221D4E6A1DDC9C190090A55A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8YUNFE7T6U;
+				INFOPLIST_FILE = PhotosClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.mejlumyan.PhotosClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		221D4E4C1DDC9C190090A55A /* Build configuration list for PBXProject "PhotosClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221D4E661DDC9C190090A55A /* Debug */,
+				221D4E671DDC9C190090A55A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221D4E681DDC9C190090A55A /* Build configuration list for PBXNativeTarget "PhotosClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221D4E691DDC9C190090A55A /* Debug */,
+				221D4E6A1DDC9C190090A55A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 221D4E491DDC9C190090A55A /* Project object */;
+}
