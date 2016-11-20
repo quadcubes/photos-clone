@@ -6,7 +6,6 @@
 //  Copyright © 2016 Samvel Mejlumyan. All rights reserved.
 //
 
-
 #import "PhotosManager.h"
 
 @class UIImage;

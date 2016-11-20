@@ -58,7 +58,6 @@ static NSString * const reuseIdentifier = @"PhotoCell";
             emptyMessage.textAlignment = NSTextAlignmentCenter;
             emptyMessage.textColor = [UIColor blackColor];
             weakSelf.collectionView.backgroundView = emptyMessage;
-            
         } else {
             weakSelf.collectionView.backgroundView = nil;
         }
@@ -100,6 +99,7 @@ static NSString * const reuseIdentifier = @"PhotoCell";
 
 
 #pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showPhoto"]) {
@@ -112,6 +112,7 @@ static NSString * const reuseIdentifier = @"PhotoCell";
  }
 
 #pragma mark - PHPhotoLibraryChangeObserver
+
 - (void)photoLibraryDidChange:(PHChange *)changeInstance {
     [self displayPhotos];
 }

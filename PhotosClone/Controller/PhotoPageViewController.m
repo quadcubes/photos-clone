@@ -9,9 +9,6 @@
 #import "PhotoViewController.h"
 #import "PhotoPageViewController.h"
 
-@interface PhotoPageViewController ()
-
-@end
 
 @implementation PhotoPageViewController
 static NSString * const contextControllerIdentifier = @"PhotoViewController";
@@ -33,6 +30,7 @@ static NSString * const contextControllerIdentifier = @"PhotoViewController";
 
 
 #pragma mark - UIPageViewControllerDelegate
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc
       viewControllerBeforeViewController:(PhotoViewController *)vc {
     
@@ -41,12 +39,14 @@ static NSString * const contextControllerIdentifier = @"PhotoViewController";
     
 }
 
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerAfterViewController:(PhotoViewController *)vc {
     
     NSUInteger nextIndex = vc.photoIndex + 1;
     return [self photoViewControllerAtIndex:nextIndex];
     
 }
+
 
 #pragma mark - Photo view content
 

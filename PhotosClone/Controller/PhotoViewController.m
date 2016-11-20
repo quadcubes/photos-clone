@@ -25,7 +25,9 @@
     
 }
 
+
 #pragma mark - Methods
+
 - (void)displayPhoto {
     
     PHImageRequestOptions *imageOptions = [[PHImageRequestOptions alloc] init];
@@ -33,13 +35,13 @@
     imageOptions.networkAccessAllowed = YES;
     imageOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
     
-    CGSize size = self.view.frame.size;
-    
-    [[PhotosManager shared] getImageForPhotoAsset:self.photo targetSize:size options:imageOptions resultBlock:^(UIImage *image) {
+    [[PhotosManager shared] getImageForPhotoAsset:self.photo
+                                       targetSize:self.view.frame.size
+                                          options:imageOptions
+                                      resultBlock:^(UIImage *image) {
         self.photoImageView.image = image;
     }];
     
 }
-
 
 @end

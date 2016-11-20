@@ -9,7 +9,9 @@
 #import "PhotosManager.h"
 
 @interface PhotoGridCollectionViewController : UICollectionViewController
+
 @property (strong, nonatomic) PHAssetCollection *assetCollection;
 @property (strong, nonatomic) PHFetchResult<PHAsset *> *photos;
 @property (strong, nonatomic) UIActivityIndicatorView *indicator;
+
 @end

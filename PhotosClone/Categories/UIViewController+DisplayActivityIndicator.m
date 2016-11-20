@@ -11,7 +11,8 @@
 @implementation UIViewController (DisplayActivityIndicator)
 
 - (UIActivityIndicatorView *)createIndicator {
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]
+                                          initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     indicator.center = self.view.center;
     indicator.hidesWhenStopped = YES;
     [self.view addSubview:indicator];

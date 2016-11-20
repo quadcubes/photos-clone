@@ -10,11 +10,9 @@
 #import "UIViewController+DisplayActivityIndicator.h"
 
 #import "AlbumGridTableViewController.h"
-
-#import "PhotoGridCollectionViewController.h"
 #import "AlbumTableViewCell.h"
 
-
+#import "PhotoGridCollectionViewController.h"
 
 
 @interface AlbumGridTableViewController () <PHPhotoLibraryChangeObserver>
