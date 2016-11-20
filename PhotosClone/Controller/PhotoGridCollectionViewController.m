@@ -13,11 +13,6 @@
 #import "PhotoPageViewController.h"
 #import "PhotoGridCollectionViewController.h"
 
-
-@interface PhotoGridCollectionViewController () <PHPhotoLibraryChangeObserver>
-@property (weak, nonatomic) IBOutlet UILabel *footerLabel;
-@end
-
 @implementation PhotoGridCollectionViewController
 
 #pragma mark - CollectionView Configs
@@ -47,33 +42,25 @@ static NSString * const reuseIdentifier = @"PhotoCell";
 
 
 - (void)displayPhotos {
-    
-    __weak PhotoGridCollectionViewController *weakSelf = self;
-    
     [[PhotosManager shared] getPhotosFromCollection:self.assetCollection withOffset:20 successBlock:^(PHFetchResult<PHAsset *> *photos) {
-        weakSelf.photos = photos;
+        self.photos = photos;
         if (photos.count < 1) {
-            UILabel *emptyMessage = [[UILabel alloc] initWithFrame:weakSelf.collectionView.frame];
+            UILabel *emptyMessage = [[UILabel alloc] initWithFrame:self.collectionView.frame];
             emptyMessage.text = @"The album is empty.";
             emptyMessage.textAlignment = NSTextAlignmentCenter;
             emptyMessage.textColor = [UIColor blackColor];
-            weakSelf.collectionView.backgroundView = emptyMessage;
+            self.collectionView.backgroundView = emptyMessage;
         } else {
-            weakSelf.collectionView.backgroundView = nil;
+            self.collectionView.backgroundView = nil;
         }
-        [weakSelf.indicator stopAnimating];
-        [weakSelf.collectionView reloadData];
+        [self.indicator stopAnimating];
+        [self.collectionView reloadData];
     }];
     
 }
 
 
 #pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.photos count];

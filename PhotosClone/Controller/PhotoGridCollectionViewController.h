@@ -8,7 +8,7 @@
 
 #import "PhotosManager.h"
 
-@interface PhotoGridCollectionViewController : UICollectionViewController
+@interface PhotoGridCollectionViewController : UICollectionViewController <PHPhotoLibraryChangeObserver>
 
 @property (strong, nonatomic) PHAssetCollection *assetCollection;
 @property (strong, nonatomic) PHFetchResult<PHAsset *> *photos;

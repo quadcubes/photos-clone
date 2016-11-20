@@ -9,7 +9,6 @@
 #import "PhotoViewController.h"
 #import "PhotoPageViewController.h"
 
-
 @implementation PhotoPageViewController
 static NSString * const contextControllerIdentifier = @"PhotoViewController";
 

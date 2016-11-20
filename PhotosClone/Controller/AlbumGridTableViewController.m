@@ -14,12 +14,6 @@
 
 #import "PhotoGridCollectionViewController.h"
 
-
-@interface AlbumGridTableViewController () <PHPhotoLibraryChangeObserver>
-@property (strong, nonatomic) PHFetchResult<PHAssetCollection *> *albums;
-@end
-
-
 @implementation AlbumGridTableViewController
 
 static NSString * const reuseIdentifier = @"AlbumCell";
@@ -57,11 +51,6 @@ static NSString * const reuseIdentifier = @"AlbumCell";
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.albums.count;
 }
@@ -69,13 +58,8 @@ static NSString * const reuseIdentifier = @"AlbumCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AlbumTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[AlbumTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:reuseIdentifier];
-    }
-    
     
     PHAssetCollection *assetCollection = [self.albums objectAtIndex:indexPath.row];
-    
     
     cell.albumTitleLabel.text = assetCollection.localizedTitle;
     
@@ -84,8 +68,7 @@ static NSString * const reuseIdentifier = @"AlbumCell";
      withOffset:0
      successBlock:^(PHFetchResult<PHAsset *> *photos) {
          PHAsset *lastAsset = [photos lastObject];
-         cell.albumPhotosCountLabel.text = [NSString stringWithFormat:@"%d",
-                                            (int)[photos count]];
+         cell.albumPhotosCountLabel.text = [NSString stringWithFormat:@"%lu", [photos count]];
          
          [[PhotosManager shared] getImageForPhotoAsset:lastAsset
             targetSize:cell.albumImageView.frame.size
@@ -116,23 +99,22 @@ static NSString * const reuseIdentifier = @"AlbumCell";
 #pragma mark - Helpful methods
 
 - (void)displayAlbums {
-    __weak AlbumGridTableViewController *weakSelf = self;
     [[PhotosManager shared] getAlbums:^(PHFetchResult<PHAssetCollection *> *albums) {
-        weakSelf.albums = albums;
+        self.albums = albums;
         if (albums.count < 1) {
-            UILabel *emptyMessage = [[UILabel alloc] initWithFrame:weakSelf.tableView.frame];
+            UILabel *emptyMessage = [[UILabel alloc] initWithFrame:self.tableView.frame];
             emptyMessage.text = @"Please, create album in Photos.";
             emptyMessage.textAlignment = NSTextAlignmentCenter;
             emptyMessage.textColor = [UIColor blackColor];
-            weakSelf.tableView.backgroundView = emptyMessage;
-            weakSelf.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            self.tableView.backgroundView = emptyMessage;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             
         } else {
-            weakSelf.tableView.backgroundView = nil;
-            weakSelf.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            self.tableView.backgroundView = nil;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         }
-        [weakSelf.indicator stopAnimating];
-        [weakSelf.tableView reloadData];
+        [self.indicator stopAnimating];
+        [self.tableView reloadData];
     }];
 }
 

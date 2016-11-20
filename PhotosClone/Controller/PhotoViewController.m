@@ -5,11 +5,9 @@
 //  Created by Sam on 17.11.16.
 //  Copyright © 2016 Samvel Mejlumyan. All rights reserved.
 //
+
 #import "PhotosManager.h"
 #import "PhotoViewController.h"
-
-@interface PhotoViewController ()
-@end
 
 @implementation PhotoViewController
 
