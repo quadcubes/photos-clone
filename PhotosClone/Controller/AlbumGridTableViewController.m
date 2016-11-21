@@ -111,9 +111,6 @@ static NSString * const authorizationButtonText = @"Change Settings";
 - (void)checkAuthorizationStatus {
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         switch (status) {
-            case PHAuthorizationStatusAuthorized:
-                [self displayAlbums];
-                break;
             case PHAuthorizationStatusRestricted:
                 [self showDeniedMessage];
                 break;
