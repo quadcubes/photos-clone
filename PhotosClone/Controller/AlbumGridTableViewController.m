@@ -26,29 +26,9 @@ static NSString * const authorizationButtonText = @"Change Settings";
     [super viewDidLoad];
     self.indicator = [self createIndicator];
     [self.indicator startAnimating];
-    
     [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+    [self checkAuthorizationStatus];
     [self displayAlbums];
-    
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        switch (status) {
-            case PHAuthorizationStatusAuthorized:
-                [self displayAlbums];
-                break;
-            case PHAuthorizationStatusRestricted:
-                [self showDeniedMessage];
-                break;
-            case PHAuthorizationStatusDenied:
-                [self showDeniedMessage];
-                break;
-            default:
-                break;
-        }
-    }];
-    
-    if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusDenied) {
-        [self showDeniedMessage];
-    }
     
 }
 
@@ -128,10 +108,22 @@ static NSString * const authorizationButtonText = @"Change Settings";
 }
 
 
-#pragma mark - PHPhotoLibraryChangeObserver
-
-- (void)photoLibraryDidChange:(PHChange *)changeInstance {
-    [self displayAlbums];
+- (void)checkAuthorizationStatus {
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        switch (status) {
+            case PHAuthorizationStatusAuthorized:
+                [self displayAlbums];
+                break;
+            case PHAuthorizationStatusRestricted:
+                [self showDeniedMessage];
+                break;
+            case PHAuthorizationStatusDenied:
+                [self showDeniedMessage];
+                break;
+            default:
+                break;
+        }
+    }];
 }
 
 
@@ -154,6 +146,13 @@ static NSString * const authorizationButtonText = @"Change Settings";
     [[UIApplication sharedApplication].keyWindow.rootViewController
      presentViewController:alertController animated:YES completion:nil];
     
+}
+
+
+#pragma mark - PHPhotoLibraryChangeObserver
+
+- (void)photoLibraryDidChange:(PHChange *)changeInstance {
+    [self displayAlbums];
 }
 
 @end
