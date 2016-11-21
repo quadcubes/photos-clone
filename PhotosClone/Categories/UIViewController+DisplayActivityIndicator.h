@@ -10,5 +10,4 @@
 
 @interface UIViewController (DisplayActivityIndicator)
 - (UIActivityIndicatorView *)createIndicator;
-
 @end

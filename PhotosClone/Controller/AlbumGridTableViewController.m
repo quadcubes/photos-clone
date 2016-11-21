@@ -46,7 +46,6 @@ static NSString * const authorizationButtonText = @"Change Settings";
         }
     }];
     
-    
     [self checkAccess];
     
 }
@@ -127,6 +126,7 @@ static NSString * const authorizationButtonText = @"Change Settings";
 - (void)photoLibraryDidChange:(PHChange *)changeInstance {
     [self displayAlbums];
 }
+
 
 - (void)checkAccess {
     

@@ -32,8 +32,6 @@ static NSString * const emptyMessageText = @"The album is empty.";
     
     [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
     [self displayPhotos];
-    
-    
 }
 
 
@@ -67,6 +65,7 @@ static NSString * const emptyMessageText = @"The album is empty.";
     return [self.photos count];
 }
 
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     PHAsset *photo = [self.photos objectAtIndex:indexPath.row];
@@ -74,8 +73,6 @@ static NSString * const emptyMessageText = @"The album is empty.";
     [[PhotosManager shared] getImageForPhotoAsset:photo targetSize:cell.frame.size options:nil resultBlock:^(UIImage *image) {
         cell.photoImageView.image = image;
     }];
-    
-
     return cell;
 }
 

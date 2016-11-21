@@ -28,6 +28,7 @@
     return _shared;
 }
 
+
 - (instancetype)init
 {
     self = [super init];
@@ -37,6 +38,7 @@
     }
     return self;
 }
+
 
 - (void)getAlbums:(void (^)(PHFetchResult<PHAssetCollection *> *))successBlock {
    
@@ -60,6 +62,7 @@
     });
     
 }
+
 
 - (void)getPhotosFromCollection:(PHAssetCollection *)collection
                      withOffset:(NSUInteger)offset
@@ -85,6 +88,7 @@
     
 }
 
+
 - (void)getImageForPhotoAsset:(PHAsset *)asset
                    targetSize:(CGSize)size
                       options:(PHImageRequestOptions *)options
@@ -107,6 +111,5 @@
      }];
 
 }
-
 
 @end

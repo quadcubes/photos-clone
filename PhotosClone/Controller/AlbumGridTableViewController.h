@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AlbumGridTableViewController : UITableViewController <PHPhotoLibraryChangeObserver>
-
 @property (strong, nonatomic) UIActivityIndicatorView *indicator;
 @property (strong, nonatomic) PHFetchResult<PHAssetCollection *> *albums;
-
 @end
