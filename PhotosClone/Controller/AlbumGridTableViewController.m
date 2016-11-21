@@ -17,6 +17,9 @@
 @implementation AlbumGridTableViewController
 
 static NSString * const reuseIdentifier = @"AlbumCell";
+static NSString * const emptyMessageText = @"Please, create album in Photos.";
+static NSString * const authorizationText = @"Application has no any permission. To give permissions tap \"Change settings\"";
+static NSString * const authorizationButtonText = @"Change Settings";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -103,7 +106,7 @@ static NSString * const reuseIdentifier = @"AlbumCell";
         self.albums = albums;
         if (albums.count < 1) {
             UILabel *emptyMessage = [[UILabel alloc] initWithFrame:self.tableView.frame];
-            emptyMessage.text = @"Please, create album in Photos.";
+            emptyMessage.text = emptyMessageText;
             emptyMessage.textAlignment = NSTextAlignmentCenter;
             emptyMessage.textColor = [UIColor blackColor];
             self.tableView.backgroundView = emptyMessage;
@@ -129,7 +132,7 @@ static NSString * const reuseIdentifier = @"AlbumCell";
     
     if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusDenied) {
         
-        NSString *message = @"Application has no any permission. To give permissions tap \"Change settings\"";
+        NSString *message = authorizationText;
         
         NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
         UIAlertController * alertController = [UIAlertController
@@ -137,7 +140,7 @@ static NSString * const reuseIdentifier = @"AlbumCell";
                                                message:message
                                                preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Change Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:authorizationButtonText style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
         }];
         

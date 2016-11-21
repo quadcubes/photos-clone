@@ -20,6 +20,7 @@ static NSUInteger const cellsPerRow = 4;
 static NSUInteger const spacingBetweenCell = 2;
 
 static NSString * const reuseIdentifier = @"PhotoCell";
+static NSString * const emptyMessageText = @"The album is empty.";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +47,7 @@ static NSString * const reuseIdentifier = @"PhotoCell";
         self.photos = photos;
         if (photos.count < 1) {
             UILabel *emptyMessage = [[UILabel alloc] initWithFrame:self.collectionView.frame];
-            emptyMessage.text = @"The album is empty.";
+            emptyMessage.text = emptyMessageText;
             emptyMessage.textAlignment = NSTextAlignmentCenter;
             emptyMessage.textColor = [UIColor blackColor];
             self.collectionView.backgroundView = emptyMessage;
