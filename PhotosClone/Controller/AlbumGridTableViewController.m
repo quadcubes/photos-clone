@@ -18,6 +18,7 @@
 
 static NSString * const reuseIdentifier = @"AlbumCell";
 static NSString * const emptyMessageText = @"Please, create album in Photos.";
+static NSString * const deniedMessage = @"Access forbidden!";
 static NSString * const authorizationText = @"Application has no any permission. To give permissions tap \"Change settings\"";
 static NSString * const authorizationButtonText = @"Change Settings";
 
@@ -35,18 +36,19 @@ static NSString * const authorizationButtonText = @"Change Settings";
                 [self displayAlbums];
                 break;
             case PHAuthorizationStatusRestricted:
-                [self checkAccess];
+                [self showDeniedMessage];
                 break;
             case PHAuthorizationStatusDenied:
-                NSLog(@"denied");
-                [self checkAccess];
+                [self showDeniedMessage];
                 break;
             default:
                 break;
         }
     }];
     
-    [self checkAccess];
+    if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusDenied) {
+        [self showDeniedMessage];
+    }
     
 }
 
@@ -105,7 +107,12 @@ static NSString * const authorizationButtonText = @"Change Settings";
         self.albums = albums;
         if (albums.count < 1) {
             UILabel *emptyMessage = [[UILabel alloc] initWithFrame:self.tableView.frame];
-            emptyMessage.text = emptyMessageText;
+            if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusDenied) {
+                emptyMessage.text = deniedMessage;
+            } else {
+                emptyMessage.text = emptyMessageText;
+            }
+            
             emptyMessage.textAlignment = NSTextAlignmentCenter;
             emptyMessage.textColor = [UIColor blackColor];
             self.tableView.backgroundView = emptyMessage;
@@ -128,28 +135,24 @@ static NSString * const authorizationButtonText = @"Change Settings";
 }
 
 
-- (void)checkAccess {
+- (void)showDeniedMessage {
     
-    if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusDenied) {
-        
-        NSString *message = authorizationText;
-        
-        NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
-        UIAlertController * alertController = [UIAlertController
-                                               alertControllerWithTitle:accessDescription
-                                               message:message
-                                               preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:authorizationButtonText style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-        }];
-        
-        [alertController addAction:settingsAction];
-        
-        [[UIApplication sharedApplication].keyWindow.rootViewController
-         presentViewController:alertController animated:YES completion:nil];
-        
-    }
+    NSString *message = authorizationText;
+    
+    NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
+    UIAlertController * alertController = [UIAlertController
+                                           alertControllerWithTitle:accessDescription
+                                           message:message
+                                           preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:authorizationButtonText style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    }];
+    
+    [alertController addAction:settingsAction];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController
+     presentViewController:alertController animated:YES completion:nil];
     
 }
 
